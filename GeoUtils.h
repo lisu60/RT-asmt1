@@ -13,6 +13,7 @@ public:
     typedef std::vector<Vector2d> GeoElement;
     static GeoElement move(Vector2d movement, GeoElement elmt);
     static void printElement(GeoElement elmt);
+    static GeoElement rotate(double theta, GeoElement elmt);
 };
 
 

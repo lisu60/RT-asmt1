@@ -9,11 +9,11 @@ int main() {
     triangle.push_back(Vector2d(2, 5));
     triangle.push_back(Vector2d(3, 1));
     triangle.push_back(Vector2d(2, 9));
-    Vector2d movement(3, -5);
+    double angle=90;
     std::cout<<"original triangle:"<<std::endl;
     GeoUtils::printElement(triangle);
-    std::cout<<"movement vector:"<<std::endl<<movement<<std::endl;
-    std::cout<<"moved triangle:"<<std::endl;
-    GeoUtils::printElement(GeoUtils::move(movement, triangle));
+    std::cout<<"rotate angle: "<<angle<<std::endl;
+    std::cout<<"rotated triangle:"<<std::endl;
+    GeoUtils::printElement(GeoUtils::rotate(angle, triangle));
     return 0;
 }

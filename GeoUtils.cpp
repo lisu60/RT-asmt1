@@ -4,6 +4,7 @@
 
 #include "GeoUtils.h"
 #include <iostream>
+#include <cmath>
 
 GeoUtils::GeoElement GeoUtils::move(Vector2d movement, GeoUtils::GeoElement elmt)
 {
@@ -24,5 +25,20 @@ void GeoUtils::printElement(GeoElement elmt)
         std::cout<<"("<<RowVector2d(*t)<<") ";
     }
     std::cout<<std::endl;
+}
+
+GeoUtils::GeoElement GeoUtils::rotate(double theta, GeoElement elmt)
+{
+    const double PI=3.14159265;
+    double rad=theta*PI/180;
+    Matrix2d R;
+    R<<cos(rad), -sin(rad), sin(rad), cos(rad);
+    GeoElement res;
+    GeoElement::iterator t;
+    for(t=elmt.begin(); t!=elmt.end(); t++)
+    {
+        res.push_back(R*(*t));
+    }
+    return res;
 }
 
