@@ -14,6 +14,7 @@ public:
     static GeoElement move(Vector2d movement, GeoElement elmt);
     static void printElement(GeoElement elmt);
     static GeoElement rotate(double theta, GeoElement elmt);
+    static GeoElement rotatep(double theta, Vector2d point, GeoElement elmt);
 };
 
 

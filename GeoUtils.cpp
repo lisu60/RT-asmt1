@@ -42,3 +42,7 @@ GeoUtils::GeoElement GeoUtils::rotate(double theta, GeoElement elmt)
     return res;
 }
 
+GeoUtils::GeoElement GeoUtils::rotatep(double theta, Vector2d point, GeoElement elmt)
+{
+    return move(point, rotate(theta, move(-point, elmt)));
+}
